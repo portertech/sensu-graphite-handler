@@ -1,12 +1,14 @@
 package main
 
 import (
+	"bytes"
 	"encoding/json"
 	"errors"
 	"fmt"
 	"io/ioutil"
 	"log"
 	"os"
+	"strconv"
 
 	"github.com/sensu/sensu-go/types"
 	"github.com/spf13/cobra"
@@ -83,9 +85,17 @@ func run(cmd *cobra.Command, args []string) error {
 }
 
 func sendMetrics(event *types.Event) error {
+	var buffer bytes.Buffer
+
 	for _, point := range event.Metrics.Points {
-		fmt.Printf("%+v\n", point)
+		stringTimestamp := strconv.FormatInt(point.Timestamp, 10)
+
+		line := fmt.Sprintf("%s %v %s\n", point.Name, point.Value, stringTimestamp[:10])
+
+		buffer.WriteString(line)
 	}
+
+	fmt.Println(buffer.String())
 
 	return nil
 }
