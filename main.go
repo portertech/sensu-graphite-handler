@@ -14,7 +14,7 @@ import (
 
 var (
 	host  string
-	port  string
+	port  int
 	stdin *os.File
 )
 
@@ -35,13 +35,13 @@ func configureRootCommand() *cobra.Command {
 	cmd.Flags().StringVarP(&host,
 		"host",
 		"h",
-		"",
+		"127.0.0.1",
 		"the graphite carbon host")
 
-	cmd.Flags().StringVarP(&port,
+	cmd.Flags().IntVarP(&port,
 		"port",
 		"p",
-		"",
+		2003,
 		"the graphite carbon tcp port")
 
 	_ = cmd.MarkFlagRequired("host")
