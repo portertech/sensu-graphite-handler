@@ -7,36 +7,45 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
+	"net"
 	"os"
 	"strconv"
+	"time"
 
 	"github.com/sensu/sensu-go/types"
 	"github.com/spf13/cobra"
 )
 
 var (
-	host  string
-	port  int
-	stdin *os.File
+	host    string
+	port    int
+	timeout int
+	verbose bool
+	stdin   *os.File
 )
 
 func main() {
 	rootCmd := configureRootCommand()
+
 	if err := rootCmd.Execute(); err != nil {
 		log.Fatal(err.Error())
+
+		os.Exit(3)
 	}
+
+	fmt.Printf("successfully sent metrics to graphite")
 }
 
 func configureRootCommand() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "sensu-graphite-handler",
-		Short: "a graphite handler built for use with sensu",
+		Short: "a sensu event handler for sending metrics to graphite",
 		RunE:  run,
 	}
 
 	cmd.Flags().StringVarP(&host,
 		"host",
-		"h",
+		"",
 		"127.0.0.1",
 		"the graphite carbon host")
 
@@ -46,8 +55,17 @@ func configureRootCommand() *cobra.Command {
 		2003,
 		"the graphite carbon tcp port")
 
-	_ = cmd.MarkFlagRequired("host")
-	_ = cmd.MarkFlagRequired("port")
+	cmd.Flags().IntVarP(&timeout,
+		"timeout",
+		"t",
+		5,
+		"the graphite carbon write timeout")
+
+	cmd.Flags().BoolVarP(&verbose,
+		"verbose",
+		"v",
+		false,
+		"verbose handler output")
 
 	return cmd
 }
@@ -95,7 +113,26 @@ func sendMetrics(event *types.Event) error {
 		buffer.WriteString(line)
 	}
 
-	fmt.Println(buffer.String())
+	address := fmt.Sprintf("%s:%d", host, port)
+	connTimeout := time.Duration(timeout) * time.Second
+
+	conn, err := net.DialTimeout("tcp", address, connTimeout)
+
+	if err != nil {
+		return fmt.Errorf("failed to connect to graphite carbon: %s", err.Error())
+	}
+
+	defer conn.Close()
+
+	if verbose {
+		fmt.Println(buffer.String())
+	}
+
+	_, err = conn.Write(buffer.Bytes())
+
+	if err != nil {
+		return fmt.Errorf("failed to write to graphite carbon: %s", err.Error())
+	}
 
 	return nil
 }
