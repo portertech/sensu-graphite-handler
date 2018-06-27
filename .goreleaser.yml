@@ -50,6 +50,11 @@ archive:
     - README.md
     - CHANGELOG.md
 
+release:
+  github:
+    owner: portertech
+    name: sensu-graphite-handler
+
   # You can change the name of the GitHub release.
   # This is parsed with the Go template engine and the following variables
   # are available:
