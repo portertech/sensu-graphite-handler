@@ -30,10 +30,8 @@ func main() {
 	if err := rootCmd.Execute(); err != nil {
 		log.Fatal(err.Error())
 
-		os.Exit(3)
+		os.Exit(2)
 	}
-
-	fmt.Printf("successfully sent metrics to graphite")
 }
 
 func configureRootCommand() *cobra.Command {
@@ -133,6 +131,8 @@ func sendMetrics(event *types.Event) error {
 	if err != nil {
 		return fmt.Errorf("failed to write to graphite carbon: %s", err.Error())
 	}
+
+	fmt.Printf("successfully sent metrics to graphite")
 
 	return nil
 }
