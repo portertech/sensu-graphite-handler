@@ -3,10 +3,104 @@
 	"ignore": "test",
 	"package": [
 		{
+			"checksumSHA1": "dvabztWVQX8f6oMLRyv4dLH+TGY=",
+			"origin": "github.com/stretchr/testify/vendor/github.com/davecgh/go-spew/spew",
+			"path": "github.com/davecgh/go-spew/spew",
+			"revision": "c679ae2cc0cb27ec3293fea7e254e47386f05d69",
+			"revisionTime": "2018-03-14T08:05:35Z"
+		},
+		{
+			"checksumSHA1": "D37uI+U+FYvTJIdG2TTozXe7i7U=",
+			"origin": "github.com/sensu/sensu-go/vendor/github.com/dgrijalva/jwt-go",
+			"path": "github.com/dgrijalva/jwt-go",
+			"revision": "9925b14b72ca03565e577d0ba67156685ede22d2",
+			"revisionTime": "2018-06-22T19:29:41Z"
+		},
+		{
+			"checksumSHA1": "2XtrajUc7LktpQETiH+H2hbd200=",
+			"origin": "github.com/sensu/sensu-go/vendor/github.com/gogo/protobuf/gogoproto",
+			"path": "github.com/gogo/protobuf/gogoproto",
+			"revision": "9925b14b72ca03565e577d0ba67156685ede22d2",
+			"revisionTime": "2018-06-22T19:29:41Z"
+		},
+		{
+			"checksumSHA1": "wn2shNJMwRZpvuvkf1s7h0wvqHI=",
+			"origin": "github.com/sensu/sensu-go/vendor/github.com/gogo/protobuf/proto",
+			"path": "github.com/gogo/protobuf/proto",
+			"revision": "9925b14b72ca03565e577d0ba67156685ede22d2",
+			"revisionTime": "2018-06-22T19:29:41Z"
+		},
+		{
+			"checksumSHA1": "P3xpZBHztuq1wgCHJmd0DkAMhXc=",
+			"origin": "github.com/sensu/sensu-go/vendor/github.com/gogo/protobuf/protoc-gen-gogo/descriptor",
+			"path": "github.com/gogo/protobuf/protoc-gen-gogo/descriptor",
+			"revision": "9925b14b72ca03565e577d0ba67156685ede22d2",
+			"revisionTime": "2018-06-22T19:29:41Z"
+		},
+		{
+			"checksumSHA1": "yqF125xVSkmfLpIVGrLlfE05IUk=",
+			"origin": "github.com/sensu/sensu-go/vendor/github.com/golang/protobuf/proto",
+			"path": "github.com/golang/protobuf/proto",
+			"revision": "9925b14b72ca03565e577d0ba67156685ede22d2",
+			"revisionTime": "2018-06-22T19:29:41Z"
+		},
+		{
 			"checksumSHA1": "40vJyUB4ezQSn/NSadsKEOrudMc=",
 			"path": "github.com/inconshreveable/mousetrap",
 			"revision": "76626ae9c91c4f2a10f34cad8ce83ea42c93bb75",
 			"revisionTime": "2014-10-17T20:07:13Z"
+		},
+		{
+			"checksumSHA1": "9SMylEipho6PyElmBg6XJZPU1O4=",
+			"origin": "github.com/sensu/sensu-go/vendor/github.com/json-iterator/go",
+			"path": "github.com/json-iterator/go",
+			"revision": "9925b14b72ca03565e577d0ba67156685ede22d2",
+			"revisionTime": "2018-06-22T19:29:41Z"
+		},
+		{
+			"checksumSHA1": "LuFv4/jlrmFNnDb/5SCSEPAM9vU=",
+			"origin": "github.com/stretchr/testify/vendor/github.com/pmezard/go-difflib/difflib",
+			"path": "github.com/pmezard/go-difflib/difflib",
+			"revision": "c679ae2cc0cb27ec3293fea7e254e47386f05d69",
+			"revisionTime": "2018-03-14T08:05:35Z"
+		},
+		{
+			"checksumSHA1": "bOUCnFlRuGN/E633R/lFuiWVrkk=",
+			"origin": "github.com/sensu/sensu-go/vendor/github.com/robfig/cron",
+			"path": "github.com/robfig/cron",
+			"revision": "9925b14b72ca03565e577d0ba67156685ede22d2",
+			"revisionTime": "2018-06-22T19:29:41Z"
+		},
+		{
+			"checksumSHA1": "K5hOD/F+QtbxniRZEjS1ek9l0CE=",
+			"origin": "github.com/sensu/sensu-go/vendor/github.com/sensu/govaluate",
+			"path": "github.com/sensu/govaluate",
+			"revision": "9925b14b72ca03565e577d0ba67156685ede22d2",
+			"revisionTime": "2018-06-22T19:29:41Z"
+		},
+		{
+			"checksumSHA1": "iS2CA6dFIl9I9Hj72MqhKG7VFR4=",
+			"path": "github.com/sensu/sensu-go/types",
+			"revision": "9925b14b72ca03565e577d0ba67156685ede22d2",
+			"revisionTime": "2018-06-22T19:29:41Z"
+		},
+		{
+			"checksumSHA1": "QJolGzX60ilhtW0oTBuEYUEpf+E=",
+			"path": "github.com/sensu/sensu-go/types/dynamic",
+			"revision": "9925b14b72ca03565e577d0ba67156685ede22d2",
+			"revisionTime": "2018-06-22T19:29:41Z"
+		},
+		{
+			"checksumSHA1": "pEJPlIWT4IAWJTa6Da5ZiixBt/k=",
+			"path": "github.com/sensu/sensu-go/util/eval",
+			"revision": "9925b14b72ca03565e577d0ba67156685ede22d2",
+			"revisionTime": "2018-06-22T19:29:41Z"
+		},
+		{
+			"checksumSHA1": "HYBnKU6ALJAK6KSosw3UtmCecqo=",
+			"path": "github.com/sensu/sensu-go/util/strings",
+			"revision": "9925b14b72ca03565e577d0ba67156685ede22d2",
+			"revisionTime": "2018-06-22T19:29:41Z"
 		},
 		{
 			"checksumSHA1": "Xnlls27MEcxIHhpRdsiUa2BqcFk=",
@@ -19,6 +113,12 @@
 			"path": "github.com/spf13/pflag",
 			"revision": "3ebe029320b2676d667ae88da602a5f854788a8a",
 			"revisionTime": "2018-06-01T13:25:42Z"
+		},
+		{
+			"checksumSHA1": "6LwXZI7kXm1C0h4Ui0Y52p9uQhk=",
+			"path": "github.com/stretchr/testify/assert",
+			"revision": "c679ae2cc0cb27ec3293fea7e254e47386f05d69",
+			"revisionTime": "2018-03-14T08:05:35Z"
 		}
 	],
 	"rootPath": "github.com/portertech/sensu-graphite-handler"
